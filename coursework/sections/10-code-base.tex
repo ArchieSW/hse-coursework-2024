@@ -1,33 +1,31 @@
 \section{Ссылка на хранилище исходного кода}
 
 Весь исходный код программного обеспечения находится в организации на \href{
-      https://github.com/orgs/HSECourseWork2022/repositories}{Github}.
+      https://github.com/orgs/soulmate-dating/repositories}{Github}.
 
 Перечислю и опишу используемые репозитории:
 \begin{enumerate}
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/dev}{dev}
+      \item Репозиторий \href{https://github.com/soulmate-dating/glimpse-compose}{glimpse-compose}
             хранит файл docker-compose для запуска всего приложения, а также файлы
-            описывающие дашборд для Grafana.
+            описывающие манифесты для разворачивания сервисов в Kubernetes.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/cmc-producer-ms}{cmc-producer-ms}
-            хранит исходных код сервиса для поставления данных с провайдера данных CoinMarketCap,
-            использующийся для поставления данных о криптовалютах.
+      \item Репозиторий \href{https://github.com/soulmate-dating/reactions}{reactions}
+            хранит исходный код сервиса для реакций пользователей на других пользователей.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/cmc-filter-mus}{cmc-filter-ms}
-            хранит исходных код для сервиса, который приводит вид из формата, поставляемого
-            cmc-producer-ms в тип сущности, готовую в отгрузке в базу данных.
+      \item Репозиторий \href{https://github.com/soulmate-dating/messenger}{messenger}
+            хранит исходный код сервиса для обмена сообщениями между пользователями.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/cryptocurrency-loader-ms}
-            {cryptocurrency-loader-ms}
-            хранит исходный код сервиса для загрузки отфильтрованных данных в базу данных.
+      \item Репозиторий \href{https://github.com/soulmate-dating/profiles}
+            {profiles}
+            хранит исходный код сервиса для работы с профилями пользователей.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/report-builder}{report-builder}
-            хранит исходный код сервиса для формирования данных для конечного пользователя.
+      \item Репозиторий \href{https://github.com/soulmate-dating/gandalf-gateway}{gandal-gateway}
+            хранит исходный код сервиса для маршрутизации запросов к другим сервисам через GRPC.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/db-migrations}{db-migrations}
-            хранит файл docker образа, для миграции в базу данных с использованием Liquibase.
+      \item Репозиторий \href{https://github.com/soulmate-dating/auth}{auth}
+            хранит исходный код сервиса для аутентификации и регистрации пользователей.
 
-      \item Репозиторий \href{https://github.com/HSECourseWork2022/models-specs}{models-specs}
-            хранит файлы для спецификаций сервисов, а также OpenAPI документация для сервиса report-builder
+      \item Репозиторий \href{https://github.com/soulmate-dating/media}{media}
+            хранит исходный код сервиса для работы с медиа-файлами (фотографии, голосовые сообщения).
 
 \end{enumerate}
