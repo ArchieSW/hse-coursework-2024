@@ -5,20 +5,23 @@
 \textbf{Messenger:} 
 Для реализации сервиса messenger я использовал Java 21 и Spring Boot 3 с подключением к базе данных ScyllaDB. Я спроектировал таблицу для хранения сообщений с учетом всех ограничений ScyllaDB. Структура таблицы выглядит следующим образом:
 
-\begin{verbatim}
-create table if not exists messages
-(
-    companions_composite_key text,
-    id                       timeuuid,
-    sender_id                uuid,
-    recipient_id             uuid,
-    date                     timestamp,
-    content                  text,
-    tag_name                 text,
-    tag_external_id          uuid,
-    PRIMARY KEY (companions_composite_key, id)
-) with clustering order by (id desc);
-\end{verbatim}
+\begin{figure}[h]
+    \begin{verbatim}
+    create table if not exists messages
+    (
+        companions_composite_key text,
+        id                       timeuuid,
+        sender_id                uuid,
+        recipient_id             uuid,
+        date                     timestamp,
+        content                  text,
+        tag_name                 text,
+        tag_external_id          uuid,
+        PRIMARY KEY (companions_composite_key, id)
+    ) with clustering order by (id desc);
+    \end{verbatim}
+    \caption{Описание таблицы с сообщениями в базе данных}
+\end{figure}
 
 В данной таблице:
 \begin{itemize}
@@ -70,14 +73,14 @@ create table if not exists messages
 \textbf{Мониторинг и дашборды:}
 Для мониторинга состояния системы и визуализации метрик я развернул Grafana и настроил дашборды, которые предоставляют графики и показатели производительности. Это включает метрики состояния микросервисов, использования ресурсов и задержек запросов, что позволяет оперативно отслеживать и устранять возможные проблемы в работе системы. Пример дашборда для сервиса messenger представлен на рис. \ref{grafana_dasboard}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\linewidth]{kubernetes_dasboard.png}
     \caption{Скриншот Kubernetes Dashboard с состоянием кластера}
     \label{kubernetes_dashboard}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\linewidth]{grafana_dashboard.png}
     \caption{Скриншот с дашбордом Grafana для мониторинга метрик на примере сервиса messenger}
